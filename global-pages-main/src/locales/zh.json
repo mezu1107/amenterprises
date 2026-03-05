@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "home": "首页",
+    "products": "产品",
+    "pricing": "定价",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "用人工智能构建你的未来",
+    "subtitle": "利用尖端技术更快地创建现代应用程序",
+    "cta": "立即开始",
+    "ctaSecondary": "了解更多"
+  },
+  "features": {
+    "title": "为什么选择我们",
+    "speed": "极速体验",
+    "speedDesc": "优化性能，提供最佳用户体验",
+    "secure": "安全设计",
+    "secureDesc": "企业级安全内置于每一层",
+    "global": "全球就绪",
+    "globalDesc": "为全球受众提供多语言支持"
+  },
+  "footer": {
+    "rights": "版权所有",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "language": {
+    "select": "选择语言"
+  }
+}
