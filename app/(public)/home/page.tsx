@@ -7,18 +7,12 @@ import { TestimonialsSection } from "@/components/public/sections/testimonials-s
 import { PricingSection } from "@/components/public/sections/pricing-section"
 import { CTASection } from "@/components/public/sections/cta-section"
 
-import { getTranslations } from "next-intl/server"
-
-export async function generateMetadata({ params }: { params: { locale: string } }) {
-  const t = await getTranslations({ locale: params.locale, namespace: "HomePage" })
-
-  return {
-    title: t("title"),
-    description: t("description"),
-  }
+export const metadata = {
+  title: "AM Enterprises",
+  description: "AM Enterprises Digital Services",
 }
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <>
       <HeroSection />

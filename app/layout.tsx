@@ -1,26 +1,16 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { NextIntlClientProvider } from "next-intl"
-import { notFound } from "next/navigation"
-
 import { AuthProvider } from "@/lib/auth-context"
 import { Toaster } from "@/components/ui/sonner"
-
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
-/*
-Supported languages
-*/
-const locales = ["en", "ar", "de", "fr", "tr", "zh", "ja"]
-
 export const metadata: Metadata = {
   title: "AM Enterprises | Admin Panel",
-  description:
-    "Enterprise SaaS Admin Panel for AM Enterprises - Manage projects, clients, invoices, and more.",
+  description: "Enterprise SaaS Admin Panel for AM Enterprises - Manage projects, clients, invoices, and more.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -39,33 +29,19 @@ export const viewport: Viewport = {
   ],
   userScalable: true,
 }
-export default async function RootLayout({
+
+export default function RootLayout({
   children,
-  params,
-}: {
+}: Readonly<{
   children: React.ReactNode
-  params: Promise<{ locale: string }>
-}) {
-
-  const { locale } = await params
-
-  const locales = ["en", "ar", "de", "fr", "tr", "zh", "ja"]
-
-  if (!locales.includes(locale)) {
-    notFound()
-  }
-
-  const messages = (await import(`@/messages/${locale}.json`)).default
-
+}>) {
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <AuthProvider>
-            {children}
-            <Toaster position="bottom-right" richColors />
-          </AuthProvider>
-        </NextIntlClientProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
+        <AuthProvider>
+          {children}
+          <Toaster position="bottom-right" richColors />
+        </AuthProvider>
         <Analytics />
       </body>
     </html>
