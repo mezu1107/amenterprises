@@ -27,7 +27,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
 import {
-  Trash2,
+  Trash,
   Edit,
   Plus,
   CheckCircle,
@@ -331,7 +331,7 @@ export default function AdminFAQsPage() {
                         className="text-red-600 hover:text-red-700"
                         onClick={() => handleDeleteFaq(faq.id)}
                       >
-                        <Trash2 className="h-4 w-4" />
+                        <Trash className="h-4 w-4" />
                       </Button>
                     </TableCell>
                   </TableRow>
@@ -397,7 +397,7 @@ export default function AdminFAQsPage() {
                           }
                         }}
                       >
-                        <Trash2 className="h-4 w-4" />
+                        <Trash className="h-4 w-4" />
                       </Button>
                     </TableCell>
                   </TableRow>
