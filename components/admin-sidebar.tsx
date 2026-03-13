@@ -44,7 +44,7 @@ const navGroups: { label: string; items: NavItem[] }[] = [
        { title: "Portfolio", href: "/admin/portfolio", icon: ImageIcon, roles: ["Admin", "Manager"] },
       // New additions for content management
       { title: "Packages / Pricing", href: "/packages", icon: Package, roles: ["Admin", "Manager"] },
-      { title: "FAQs", href: "/faqs", icon: HelpCircle, roles: ["Admin"] },
+      { title: "FAQs", href: "/admin-faqs", icon: HelpCircle, roles: ["Admin"] },
       { title: "Terms & Conditions", href: "/terms", icon: FileText, roles: ["Admin"] },
     ],
   },

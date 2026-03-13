@@ -1,13 +1,12 @@
-// proxy.ts  ← yeh naam important hai Next.js 16 ke liye
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './i18n/routing';  // ya jo bhi path hai tumhara routing.ts ka
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default createMiddleware(routing);
+export function proxy(request: NextRequest) {
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
-    // Match almost everything except internal Next.js stuff
-    '/((?!_next|api|.*\\..*).*)',
-    '/'
+    "/((?!api|_next|.*\\..*).*)"
   ]
 };

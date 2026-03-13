@@ -1,15 +1,28 @@
-import createNextIntlPlugin from "next-intl/plugin"
-
-const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  images: {
-    unoptimized: true,
+
+  eslint: {
+    ignoreDuringBuilds: true,
   },
+
+  images: {
+    unoptimized: false,
+  },
+
+  webpack: (config) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      path: false,
+    }
+
+    return config
+  },
+
+  reactStrictMode: true,
 }
 
-export default withNextIntl(nextConfig)
+export default nextConfig

@@ -24,7 +24,7 @@ const footerLinks = {
     { label: "FAQ", href: "/faq" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-    { label: "Client Portal", href: "/auth/login" },
+    
   ],
 }
 
